@@ -1,0 +1,50 @@
+# FICHIER DE CONFIG DE BASE
+#
+# Il contient les valeurs par defauts. Pour changer la valeur, 'uncomment' la valeur souhaiter.
+# A noter que les tables ([section]) ne peuvent etre enlever, mais tout les tables qui ne 
+# sont pas la par defaut vont etre ignorer. Les valeur qui ne sont pas en commentaire sont des
+# sections qui n'ont pas des valeur par defaut. les valeurs dans les sections qui ne sont pris
+# en charge, vont etre ignorer, sauf pour les sections sans valeur par defaut 
+#
+[general]
+version = "1.2.1"
+
+
+[authentication]
+
+# https://workbench.cisecurity.org/sections/2023519/recommendations/3235123
+# require-ssl = true
+
+# https://workbench.cisecurity.org/sections/2023519/recommendations/3235124
+# forms-authentication = "UseCookies"
+
+# https://learn.microsoft.com/en-us/previous-versions/aspnet/da0adyye(v=vs.100)
+# https://workbench.cisecurity.org/sections/2023519/recommendations/3235127
+# password-format = 'SHA1'
+
+[asp]
+
+# https://workbench.cisecurity.org/sections/2023520/recommendations/3235139
+# machine-key = "HMACSHA512"
+
+# https://workbench.cisecurity.org/sections/2023520/recommendations/3235130
+# debug-mode = false
+
+[transport]
+
+# https://workbench.cisecurity.org/sections/2023524/recommendations/3235152
+# ssl-v2 = false 
+
+# https://workbench.cisecurity.org/sections/2023524/recommendations/3235162
+# tls-1_2 = true 
+
+# https://workbench.cisecurity.org/sections/2023524/recommendations/3235167
+# aes-cipher-suite = true
+
+[request]
+
+# https://workbench.cisecurity.org/sections/2023521/recommendations/3235154
+# unlisted-file-ext = false
+
+# https://workbench.cisecurity.org/sections/2023521/recommendations/3235156 
+# not-listed-apis = false 

@@ -1,0 +1,94 @@
+{
+    "name": "PostgreSQL 14",
+    "version": "1.1.0",
+    "source": "https://workbench.cisecurity.org/benchmarks/11866",
+    "os":   "ubuntu",
+    "sections" : [
+
+        {
+            "name": "installation",
+            "parameters": [
+                {
+                    "name": "enable-service",
+                    "source": "https://workbench.cisecurity.org/sections/831613/recommendations/1366015",
+                    "expect": null,
+                    "default": true,
+                    "description": "Si le service Postgresql dans Systemd devrait être activé"
+                }
+         
+            ]
+        
+        },
+
+        
+        {
+            "name": "settings",
+            "parameters": [
+                {
+                    "name": "enable-tls",
+                    "source": " https://workbench.cisecurity.org/sections/831618/recommendations/1366043",
+                    "expect": null,
+                    "default": true,
+                    "description": "Activer l'encryption du traffic vers ou du serveur"
+                }
+
+            ]
+
+        },
+
+        {
+            "name": "logging",
+            "parameters": [
+                {
+                    "name": "log-destination",
+                    "source": "https://workbench.cisecurity.org/sections/831615/recommendations/1366020",
+                    "expect": ["stderr", "csvlog", "syslog" ],
+                    "default": ["csvlog"],
+                    "description": "Comment le serveur devrait reporter ses logs"
+                },
+
+                {
+                    "name": "log-trunc-on-rotation",
+                    "source": "https://workbench.cisecurity.org/sections/831615/recommendations/1366029",
+                    "expect": null,
+                    "default": true,
+                    "description": "'Overwrite' les fichiers logs"
+                },
+
+                {
+                    "name": "pgaudit",
+                    "source": "https://workbench.cisecurity.org/sections/831614/recommendations/1366062",
+                    "expect": null,
+                    "default": true,
+                    "description": "Installer l'extension d'audite pgaudit"
+                },
+
+                {
+                    "name": "debug-print-plan",
+                    "source": "https://workbench.cisecurity.org/sections/831615/recommendations/1366053",
+                    "expect": null,
+                    "default": false,
+                    "description": "Activer l'affichage des logs de type DEBUG"
+                }
+
+            ]
+
+        },
+
+        {
+            "name": "special",
+            "parameters": [
+                {
+                    "name": "pgbackrest",
+                    "source": "https://workbench.cisecurity.org/sections/831620/recommendations/1366051",
+                    "expect": null,
+                    "default": true,
+                    "description": "Avoir l'outil pgBackRest d'installé"
+                }
+
+            ]
+        }
+
+    ]
+
+}

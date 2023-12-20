@@ -1,0 +1,91 @@
+# FICHIER DE CONFIG DE BASE
+#
+# Il contient les valeurs par defauts. Pour changer la valeur, 'uncomment' la valeur souhaiter.
+# A noter que les tables ([section]) ne peuvent etre enlever, mais tout les tables qui ne 
+# sont pas la par defaut vont etre ignorer. Les valeur qui ne sont pas en commentaire sont des
+# sections qui n'ont pas des valeur par defaut. les valeurs dans les sections qui ne sont pris
+# en charge, vont etre ignorer, sauf pour les sections sans valeur par defaut 
+#
+[general]
+version = "1.0.0"
+
+# Liste de fichier avec leur permission attendu
+[files]
+
+# Nom d'un fichier
+# path: le chemin d'un fichier
+# sa permission representer en chiffre
+# ex: fichierx = { path="/foo/bar", permission="777", owner="userx:groupx" }
+
+# https://workbench.cisecurity.org/sections/1431364/recommendations/2296627
+# grub = { path="/boot/grub/grub.cfg", permission="400", owner="root:root"}
+# https://workbench.cisecurity.org/sections/1431374/recommendations/2296674
+# shadow = {path="/etc/shadow", permission="640", owner="root:root" }
+# https://workbench.cisecurity.org/sections/1431374/recommendations/2296670
+# group_ = {path="/etc/group-", permission="640", owner="root:root" }
+
+[service]
+
+# https://workbench.cisecurity.org/sections/1431362/recommendations/2296605
+# xserver-installed = false
+
+
+# parametre du kernel a etre mis ou changer
+[kernel]
+
+# https://workbench.cisecurity.org/sections/1431380/recommendations/2296685
+# send-redirects = false
+# https://workbench.cisecurity.org/sections/1431380/recommendations/2296690
+# ip-forwarding = false 
+
+
+[pwquality]
+# https://workbench.cisecurity.org/sections/1431394/recommendations/2296801
+# longeur du mot de passe ( entre 0 et 255 )
+# minlen = 14
+
+# Nombre minimal de classe de caractere (nombre,minuscule,majuscule,special)
+# (valeur de 0 a 4)
+# minclass = 4
+
+# Valeur qui vont suivre suivre cette logique:
+# source: https://linux.die.net/man/8/pam_pwquality
+# - un nombre positif est un nombre maximal a avoir de ce credit
+# - un nombre negatif est un nombre minimal a avoir de de credit
+# - le chiffre doit etre entre -127 et 127
+
+# Credit de nombre
+# dcredit = -1 
+
+# Credit de majuscule 
+# ucredit = -1
+
+# Credit de caractere 
+# ocredit = -1 
+
+# Credit de minuscule
+# lcredit = -1
+
+[sshd]
+
+# https://workbench.cisecurity.org/sections/1431382/recommendations/2296747
+# x11-forwarding = false
+
+# https://workbench.cisecurity.org/sections/1431382/recommendations/2296734
+# accepte les mots de passes vident 
+# empty-passwd = false
+
+[timesync]
+
+# https://workbench.cisecurity.org/sections/1431349/recommendations/2296569
+# Quelle daemon a utiliser
+# - "systemd-timesyncd"
+# - "chrony"
+# - "ntp"
+# daemons = [ "systemd-timesyncd" ]
+
+
+
+
+
+

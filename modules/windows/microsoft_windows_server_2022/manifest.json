@@ -1,0 +1,95 @@
+{
+    "name": "Microsoft Windows Server 2022",
+    "version": "2.0.0", 
+    "source": "https://workbench.cisecurity.org/benchmarks/12626",
+    "os":   "windows-server-2022",
+    "sections" : [
+
+        {
+            "name": "security",
+            "parameters": [
+                {
+                    "name": "limit-blank-password",
+                    "source": "https://workbench.cisecurity.org/sections/10124/recommendations/19200",
+                    "expect": null,
+                    "default": true,
+                    "description": "Est-ce que les comptes sans mot de passe on le droit de se connecter"
+                },
+
+                {
+                    "name": "allow-print-driver",
+                    "source": "https://workbench.cisecurity.org/sections/10127/recommendations/19206",
+                    "expect": null,
+                    "default": false,
+                    "description": "Est-ce-que tous le monde peut installer des driver d'imprimante"
+                },
+
+                {
+                    "name": "display-last-username",
+                    "source": "https://workbench.cisecurity.org/sections/10130/recommendations/19216",
+                    "expect": null,
+                    "default": false,
+                    "description": "Est-ce-que le nom du dernier utilisateur devrait être visible ou non dans la page de login"
+                }
+
+            ]
+        
+        },
+
+        {
+            "name": "service",
+            "parameters": [
+                {
+                    "name": "spools-print-jobs",
+                    "source": "https://workbench.cisecurity.org/sections/1797995/recommendations/2879988",
+                    "expect": null,
+                    "default": false,
+                    "description": "Activer le service spools"
+                }
+
+            ]
+
+        },
+
+        {
+            "name": "assignment",
+            "parameters": [
+                {
+                    "name": "acm-trust-caller",
+                    "source": "https://workbench.cisecurity.org/sections/1797992/recommendations/2879950",
+                    "expect": null,
+                    "default": [],
+                    "description": "Quel utilisateur à le droit d'acceder à ACM durant un processus de Backup/Restore"
+                },
+
+                {
+                    "name": "rdp-logon-allow",
+                    "source": "https://workbench.cisecurity.org/sections/1797992/recommendations/2879958",
+                    "expect": null,
+                    "default": [ "BUILTIN\\Administrators", "BUILTIN\\Remote Desktop Users" ],
+                    "description": "Quel utilisateur à le droit de se connecter en rdp au serveur"
+                },
+
+                {
+                    "name": "impersonate-client",
+                    "source": "https://workbench.cisecurity.org/sections/1797992/recommendations/2879981",
+                    "expect": null,
+                    "default": ["BUILTIN\\Administrators", "NT AUTHORITY\\LOCAL SERVICE", "NT AUTHORITY\\NETWORK SERVICE", "NT AUTHORITY\\SERVICE"],
+                    "description": "Quel utilisateur à le droit de se faire passé par un compte utilisateur"
+                },
+
+                {
+                    "name": "volume-maint-task",
+                    "source": "https://workbench.cisecurity.org/sections/1797992/recommendations/2879994",
+                    "expect": null,
+                    "default": ["BUILTIN\\Administrators"],
+                    "description": "Quel utilisateur à le droit de faire la gestion des disques du serveur"
+                }
+
+            ]
+
+        }
+
+    ]
+
+}

@@ -1,0 +1,185 @@
+{
+    "name": "Ubuntu Linux 22.04 LTS", 
+    "version": "1.0.0",
+    "source": "https://workbench.cisecurity.org/benchmarks/10430",
+    "os":   "ubuntu",
+    "sections" : [
+
+        {
+            "name": "files",
+            "parameters": [
+                {
+                    "name": "grub",
+                    "source": "https://workbench.cisecurity.org/sections/1431364/recommendations/2296627",
+                    "expect": null,
+                    "default": { 
+                        "path": "/boot/grub/grub.cfg", 
+                        "permission": "400", 
+                        "owner": "root:root"
+                    },
+                    "description": "Info sur le fichier de config Grub"
+                },
+
+                {
+                    "name": "shadow",
+                    "source": "https://workbench.cisecurity.org/sections/1431374/recommendations/2296674",
+                    "expect": null,
+                    "default": {
+                        "path": "/etc/shadow", 
+                        "permission": "640", 
+                        "owner": "root:root" 
+                    },
+                    "description": "Info sur le fichier entreposant les information sur les utilisateur"
+                },
+
+                {
+                    "name": "group_",
+                    "source": "https://workbench.cisecurity.org/sections/1431374/recommendations/2296670",
+                    "expect": null,
+                    "default": {
+                        "path": "/etc/group-", 
+                        "permission": "640", 
+                        "owner": "root:root" 
+                    },
+                    "description": "Info sur le fichier contenant une liste de tous les groupes valide en backup"
+                }
+
+            ]
+
+        },
+
+        {
+            "name": "service",
+            "parameters": [
+                {
+                    "name": "xserver-installed",
+                    "source": "https://workbench.cisecurity.org/sections/1431362/recommendations/2296605",
+                    "expect": null,
+                    "default": false,
+                    "description": "Est-ce-que le X Window System devrait être installé"
+                }
+            
+            ]
+        
+        },
+
+        {
+            "name": "kernel",
+            "parameters": [
+                {
+                    "name": "send-redirects",
+                    "source": "https://workbench.cisecurity.org/sections/1431380/recommendations/2296685",
+                    "expect": null,
+                    "default": false,
+                    "description": "Le serveur envoie des paquets ICMP Redirects"
+                },
+                
+                {
+                    "name": "ip-forwarding",
+                    "source": "https://workbench.cisecurity.org/sections/1431380/recommendations/2296690",
+                    "expect": null,
+                    "default": false,
+                    "description": "Le serveur 'forward' les paquets qu'il reçoit"
+                }
+            
+            ]
+        
+        },
+
+        {
+            "name": "pwquality",
+            "parameters": [
+                {
+                    "name": "minlen",
+                    "source": "https://workbench.cisecurity.org/sections/1431394/recommendations/2296801",
+                    "expect": null,
+                    "default": 14,
+                    "description": "la nombre de caractère dans le mot de passe"
+                },
+
+                {
+                    "name": "minclass",
+                    "source": "https://workbench.cisecurity.org/sections/1431394/recommendations/2296801",
+                    "expect": null,
+                    "default": 4,
+                    "description": "Le nombre minimal de classe de caractère"
+                },
+
+                {
+                    "name": "dcredit",
+                    "source": "https://workbench.cisecurity.org/sections/1431394/recommendations/2296801",
+                    "expect": null,
+                    "default": -1,
+                    "description": "Crédit pour les caractère représentant un nombre"
+                },
+
+                {
+                    "name": "ucredit",
+                    "source": "https://workbench.cisecurity.org/sections/1431394/recommendations/2296801",
+                    "expect": null,
+                    "default": -1,
+                    "description": "Crédit pour les caractères représentant un lettre majuscule"
+                },
+
+                {
+                    "name": "ocredit",
+                    "source": "https://workbench.cisecurity.org/sections/1431394/recommendations/2296801",
+                    "expect": null,
+                    "default": -1,
+                    "description": "Crédit pour les caractères représentant un symbole, etc."
+                },
+
+                {
+                    "name": "lcredit",
+                    "source": "https://workbench.cisecurity.org/sections/1431394/recommendations/2296801",
+                    "expect": null,
+                    "default": -1,
+                    "description": "Crédit pour les caractères représentant une lettre minuscule"
+                }
+
+            
+            ]
+        
+        },
+
+        {
+            "name": "sshd",
+            "parameters": [
+                {
+                    "name": "x11-forwarding",
+                    "source": "https://workbench.cisecurity.org/sections/1431382/recommendations/2296747",
+                    "expect": null,
+                    "default": false,
+                    "description": "Activer la connexion graphiques à distance"
+                },
+
+                {
+                    "name": "empty-password",
+                    "source": "https://workbench.cisecurity.org/sections/1431382/recommendations/2296734",
+                    "expect": null,
+                    "default": false,
+                    "description": "Accepter les connexions avec un mot de passe vide"
+                }
+                
+            ]
+        
+        },
+
+        {
+            "name": "timesync",
+            "parameters": [
+                {
+                    "name": "daemons",
+                    "source": "https://workbench.cisecurity.org/sections/1431349/recommendations/2296569",
+                    "expect": [ "systemd-timesyncd", "chrony", "ntp" ],
+                    "default": [ "systemd-timesyncd" ],
+                    "description": "Quel ou lesquels daemons le serveur devrait-il utiliser pour la synchronizations de son horloge"
+                }
+            
+            ]
+        
+        }
+
+    ]
+
+}

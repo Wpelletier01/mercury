@@ -1,0 +1,121 @@
+{
+    "name": "Microsoft IIS 10", 
+    "version": "1.2.1",
+    "source": "https://workbench.cisecurity.org/benchmarks/13949",
+    "os":   "windows",
+    "sections" : [
+
+        {
+            "name": "authentication",
+            "parameters": [
+                {
+                    "name": "require-ssl",
+                    "source": "https://workbench.cisecurity.org/sections/2023519/recommendations/3235123",
+                    "expect": null,
+                    "default": true,
+                    "description": "Activer SSL pour les formulaires d'authentification durant le processus de connection"
+
+                },
+
+                {
+                    "name": "forms-authentication",
+                    "source": "https://workbench.cisecurity.org/sections/2023519/recommendations/3235124",
+                    "expect": ["UseCookies", "AutoDetect", "UseDeviceProfile", "UseUri"],
+                    "default": "UseCookies",
+                    "description": "L'authentification par formulaires peut être configurée pour conserver l'identifiant de session du visiteur du site dans un URI ou un cookie"
+                
+                },
+
+                {
+                    "name": "password-format",
+                    "source": "https://workbench.cisecurity.org/sections/2023519/recommendations/3235127",
+                    "expect": ["SHA1","MD5","Clear"],
+                    "default": "SHA1",
+                    "description": "Comment le serveur devrait entreposer les mot de passes"
+                }
+
+            ]
+        
+        },
+
+        {
+            "name": "asp",
+            "parameters": [
+                {
+                    "name": "machine-key",
+                    "source": "https://workbench.cisecurity.org/sections/2023520/recommendations/3235139",
+                    "expect": [ "AES", "MD5", "SHA1", "TripleDES", "HMACSHA256", "HMACSHA384", "HMACSHA512"],
+                    "default": "HMACSHA512",
+                    "description": "Spécifie l'algorithme et les clés qu'ASP.NET utilisera pour le chiffrement"
+                },
+
+                {
+                    "name": "debug-mode",
+                    "source": "https://workbench.cisecurity.org/sections/2023520/recommendations/3235130",
+                    "expect": null,
+                    "default": false,
+                    "description": "Activer le mode debug"
+                }
+
+            ]
+
+        },
+
+        {
+            "name": "transport",
+            "parameters": [
+                {
+                    "name": "ssl-v2",
+                    "source": "https://workbench.cisecurity.org/sections/2023524/recommendations/3235152",
+                    "expect": null,
+                    "default": false,
+                    "description": "Activer le protocole SSLv2"
+                
+                },
+
+                {
+                    "name": "tls-1_2",
+                    "source": "https://workbench.cisecurity.org/sections/2023524/recommendations/3235162",
+                    "expect": null,
+                    "default": true,
+                    "description": "Activer le protocole TLS 1.2"
+                },
+
+                {
+                    "name": "aes-cipher-suite",
+                    "source": "https://workbench.cisecurity.org/sections/2023524/recommendations/3235167",
+                    "expect": null,
+                    "default": true,
+                    "description": "Activer l'utilisation de la suite de cipher AES 256/256"
+                }
+
+            ]
+
+        },
+
+        {
+            "name": "request",
+            "parameters": [
+                {
+                    "name": "unlisted-file-ext",
+                    "source": "https://workbench.cisecurity.org/sections/2023521/recommendations/3235154",
+                    "expect": null,
+                    "default": false,
+                    "description": "Accepte les types de fichier qui ne sont pas declarés dans le serveur web"
+                },
+
+                {
+                    "name": "not-listed-apis",
+                    "source": "https://workbench.cisecurity.org/sections/2023521/recommendations/3235156",
+                    "expect": null,
+                    "default": false,
+                    "description": "Spécifie si les modules ISAPI non répertoriés sont autorisés à s'exécuter sur ce serveur"
+                }
+
+            ]
+
+        }
+
+    ]
+
+}

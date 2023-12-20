@@ -1,0 +1,49 @@
+# FICHIER DE CONFIG DE BASE
+#
+# Il contient les valeurs par defauts. Pour changer la valeur, 'uncomment' la valeur souhaiter.
+# A noter que les tables ([section]) ne peuvent etre enlever, mais tout les tables qui ne 
+# sont pas la par defaut vont etre ignorer. Les valeur qui ne sont pas en commentaire sont des
+# sections qui n'ont pas des valeur par defaut. les valeurs dans les sections qui ne sont pris
+# en charge, vont etre ignorer, sauf pour les sections sans valeur par defaut 
+#
+
+[general]
+# version du benchmark
+version = "2.0.0"
+
+[service]
+# https://workbench.cisecurity.org/sections/1797995/recommendations/2879988
+# spools-print-jobs = false
+
+[assignment]
+
+# https://workbench.cisecurity.org/sections/1797992/recommendations/2879950
+# acm-trust-caller = []
+
+# https://workbench.cisecurity.org/sections/1797992/recommendations/2879958
+# rdp-logon-allow = ["BUILTIN\\Administrators", "BUILTIN\\Remote Desktop Users"]
+
+# Les valeur Network Service et Local Service sont obligatoire
+# https://workbench.cisecurity.org/sections/1797992/recommendations/2879981
+# impersonate-client = [
+#    "BUILTIN\\Administrators", 
+#    "NT AUTHORITY\\LOCAL SERVICE", 
+#    "NT AUTHORITY\\NETWORK SERVICE", 
+#    "NT AUTHORITY\\SERVICE"
+# ]
+
+
+# https://workbench.cisecurity.org/sections/1797992/recommendations/2879994
+# volume-maint-task = ["BUILTIN\\Administrators"]
+
+
+[security]
+
+# https://workbench.cisecurity.org/sections/10124/recommendations/19200
+# limit-blank-password = true
+
+# https://workbench.cisecurity.org/sections/10127/recommendations/19206
+# allow-print-driver = false
+
+# https://workbench.cisecurity.org/sections/10130/recommendations/19216
+# display-last-username = false

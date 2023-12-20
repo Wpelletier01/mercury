@@ -1,0 +1,48 @@
+# FICHIER DE CONFIG DE BASE
+#
+# Il contient les valeurs par defauts. Pour changer la valeur, 'uncomment' la valeur souhaiter.
+# A noter que les tables ([section]) ne peuvent etre enlever, mais tout les tables qui ne 
+# sont pas la par defaut vont etre ignorer. Les valeur qui ne sont pas en commentaire sont des
+# sections qui n'ont pas des valeur par defaut. les valeurs dans les sections qui ne sont pris
+# en charge, vont etre ignorer, sauf pour les sections sans valeur par defaut 
+#
+[general]
+version = "1.1.0"
+
+[installation]
+
+# https://workbench.cisecurity.org/sections/831613/recommendations/1366015
+# enable-service = true
+
+
+[settings]
+
+# si est activer il utilisera temporairement le certificat et la cle snake oil
+# https://workbench.cisecurity.org/sections/831618/recommendations/1366043
+# enable-tls = true 
+
+
+[logging]
+
+# https://workbench.cisecurity.org/sections/831615/recommendations/1366020
+# Valeur possibles:
+#   - csvlog
+#   - stderr
+#   - syslog
+#
+# log-destination =  ["csvlog"]
+
+# https://workbench.cisecurity.org/sections/831615/recommendations/1366029
+# log-trunc-on-rotation = true
+
+# https://workbench.cisecurity.org/sections/831614/recommendations/1366062
+# pgaudit = true
+
+# https://workbench.cisecurity.org/sections/831615/recommendations/1366053
+# debug-print-plan = false
+
+
+[special]
+
+# https://workbench.cisecurity.org/sections/831620/recommendations/1366051
+# pgbackrest = true

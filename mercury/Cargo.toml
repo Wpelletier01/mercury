@@ -1,0 +1,25 @@
+[package]
+name = "mercury"
+version = "0.1.0"
+edition = "2021"
+
+
+[[bin]]
+name = "mercury"
+path = "src/bin.rs"
+
+[lib]
+name = "libmercury"
+path = "src/lib/lib.rs"
+
+
+[dependencies]
+toml = "0.8.8"
+thiserror = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4.20"
+env_logger = "0.10.1"
+comfy-table = "7.1.0"
+serde_json = "1.0.108"
+clap = { version = "4.4.11", features = ["derive"] }
+anyhow = "1.0.75"
